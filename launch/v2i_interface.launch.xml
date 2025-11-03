@@ -1,0 +1,12 @@
+<launch>
+  <arg name="config_file" default="$(find-pkg-share v2i_interface)/config/v2i_interface.param.yaml"/>
+  <arg name="log_level" default="info"/>
+
+  <node pkg="v2i_interface"
+        exec="v2i_interface_node"
+        name="v2i_interface"
+        output="screen">
+    <param from="$(var config_file)"/>
+    <param name="use_sim_time" value="false"/>
+  </node>
+</launch>

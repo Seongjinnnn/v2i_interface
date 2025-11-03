@@ -1,0 +1,33 @@
+/v2i_interface:
+  ros__parameters:
+    # Input topic for SPaT messages from its_ros
+    input_topic: "/signal_info"
+
+    # Output topic for Autoware virtual traffic light states
+    output_topic: "/awapi/tmp/virtual_traffic_light_states"
+
+    # Type identifier for virtual traffic light
+    virtual_traffic_light_type: "TRAFFIC_LIGHT"
+
+    # Maximum time (seconds) without signal update before considering it invalid
+    signal_timeout_sec: 5.0
+
+    # Default to stop (approval=false) when signal state is unknown
+    default_to_stop: true
+
+    # Mapping from signal_group_id to Autoware Virtual Traffic Light IDs
+    signal_group_to_autoware_vtl_map:
+      sg_9:
+        autoware_vtl_ids: [8347, 8508]
+      sg_1:
+        autoware_vtl_ids: [8613]
+      sg_5:
+        autoware_vtl_ids: [8628]
+      sg_13:
+        autoware_vtl_ids: [8861, 8874]
+
+    # Event states for which approval should be true
+    approval_event_states: [6]
+
+    # Event states for which is_finalized should be true
+    finalized_event_states: [6]
