@@ -120,7 +120,7 @@ Apache-2.0
 
 ## Author
 
-SWS
+Jeong Seongjin
 
 ## See Also
 
